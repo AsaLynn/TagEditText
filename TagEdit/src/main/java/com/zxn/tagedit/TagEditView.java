@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -59,10 +59,11 @@ public class TagEditView extends LinearLayout {
         Log.i(TAG, "onInit: -->" + mTagNameSize);
         //onInit: -->52--->15
         //onInit: -->51.749996
-
-
         Log.i(TAG, "onInit: -->" + mHintTextSize);
         //onInit: -->13
+
+        boolean mEditEnabled = typedArray.getBoolean(R.styleable.TagEditView_editEnabled, true);
+
         tvTag.setText(mTagName);
         //tvTag.setTextSize(TypedValue.COMPLEX_UNIT_SP, mTagNameSize);
         tvTag.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTagNameSize);
@@ -72,6 +73,9 @@ public class TagEditView extends LinearLayout {
         etInput.setHintTextColor(mHintTextColor);
         etInput.setTextSize(TypedValue.COMPLEX_UNIT_PX, mHintTextSize);
         typedArray.recycle();
+
+        //editEnabled--->
+        etInput.setEnabled(mEditEnabled);
     }
 
     private void onInitView() {
@@ -81,6 +85,35 @@ public class TagEditView extends LinearLayout {
         tvTag = findViewById(R.id.tv_tag);
         etInput = findViewById(R.id.et_input);
     }
+
+    public void setHintText(String text) {
+        etInput.setHint(text);
+    }
+
+    public void setHintText(@StringRes int textId) {
+        etInput.setHint(textId);
+    }
+
+    public void setInputText(String text) {
+        etInput.setText(text);
+    }
+
+    public void setInputText(@StringRes int textId) {
+        etInput.setText(textId);
+    }
+
+    public String getInputText() {
+        return etInput.getText().toString();
+    }
+
+    public TextView getTagNameView() {
+        return tvTag;
+    }
+
+    public EditText getEditText() {
+        return etInput;
+    }
+}
 
 /*    public static float applyDimension(int unit, float value,
                                        DisplayMetrics metrics)
@@ -102,5 +135,3 @@ public class TagEditView extends LinearLayout {
         return 0;
     }*/
 
-
-}

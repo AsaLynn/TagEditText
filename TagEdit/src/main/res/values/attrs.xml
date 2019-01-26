@@ -8,5 +8,6 @@
         <attr name="hintText" format="string" />
         <attr name="hintTextColor" format="string" />
         <attr name="hintTextSize" format="dimension" />
+        <attr name="editEnabled" format="boolean" />
     </declare-styleable>
 </resources>
