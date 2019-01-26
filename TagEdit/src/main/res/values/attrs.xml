@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TagEditView">
+        <attr name="tagName" format="string" />
+        <attr name="tagNameColor" format="color" />
+        <attr name="tagNameSize" format="dimension" />
+        <attr name="hintText" format="string" />
+        <attr name="hintTextColor" format="string" />
+        <attr name="hintTextSize" format="dimension" />
+    </declare-styleable>
+</resources>

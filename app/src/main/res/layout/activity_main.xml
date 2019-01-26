@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <com.zxn.tagedit.TagEditView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:hintText="点击设置昵称"
+        app:hintTextColor="@color/colorAccent"
+        app:tagName="昵称"
+        app:tagNameColor="@color/colorAccent"
+        app:tagNameSize="15sp" />
+
+    <com.zxn.tagedit.TagEditView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:hintText="点击选则性别"
+        app:tagName="性别"
+        app:tagNameColor="@color/colorAccent"
+        app:tagNameSize="15sp" />
+
+
+</LinearLayout>
